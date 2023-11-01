@@ -1,0 +1,8 @@
+Interface (Metamorfose) implementada na classe Anfibio
+Metodos abstratos (mover, comer) na classe Animal 
+Sobrecarga (informarGestacao) realizada na classe Mamifero
+Metodos mover e comer são implementadas em todas as classes (sobrescrita)
+
+Existe 2 classes de tratamento de exceção: 
+	-InsercaoVazia é emitido quando nao se insere alguma informação
+	-ValorVazio é quando é inserido o valor 0 em um int ou double
