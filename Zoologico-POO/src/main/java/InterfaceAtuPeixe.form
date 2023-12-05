@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="IdadeTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PesoTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AlturaTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="EspecieTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="AlimentacaoTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SexoTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="SexoOpcao" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="AlimentacaoOpcao" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="124" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="AlturaCampo" alignment="0" min="-2" pref="224" max="-2" attributes="0"/>
+                                  <Component id="EspecieCampo" alignment="0" min="-2" pref="224" max="-2" attributes="0"/>
+                                  <Component id="IdadeCampo" alignment="0" min="-2" pref="224" max="-2" attributes="0"/>
+                                  <Component id="PesoCampo" alignment="0" min="-2" pref="224" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="NadadeirasTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="AreaTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="TemperaturaTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="NomeHabitatTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="SoloTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ProfundidadeMaxTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="NadaTexto" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="NadaOpcao" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="NomeHabitatCampo" alignment="0" pref="170" max="32767" attributes="0"/>
+                          <Component id="TemperaturaCampo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AreaCampo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="NadadeirasCampo" max="32767" attributes="0"/>
+                          <Component id="SoloCampo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ProfundidadeMaxCampo" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="MenuBotao" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="ConsultarBotao" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="IdadeTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="IdadeCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PesoCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PesoTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AlturaTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AlturaCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="EspecieCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EspecieTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="NomeHabitatTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NomeHabitatCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="TemperaturaTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TemperaturaCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AreaTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AreaCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="SoloCampo" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="SoloTexto" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SexoTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SexoOpcao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AlimentacaoTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AlimentacaoOpcao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="NadadeirasTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NadadeirasCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ProfundidadeMaxCampo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ProfundidadeMaxTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="NadaTexto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NadaOpcao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="MenuBotao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ConsultarBotao" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="MenuBotao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuBotaoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ConsultarBotao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Atualizar Animal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarBotaoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="IdadeTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Idade:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="IdadeCampo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdadeCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PesoTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Peso:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="PesoCampo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PesoCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AlturaTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Altura:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="AlturaCampo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlturaCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="EspecieTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Especie:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="EspecieCampo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=" "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EspecieCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="SexoTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sexo:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="SexoOpcao">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Feminino"/>
+            <StringItem index="1" value="Masculino"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SexoOpcaoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AlimentacaoTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Alimenta&#xe7;&#xe3;o:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="AlimentacaoOpcao">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Herbivoro"/>
+            <StringItem index="1" value="Carnivoro"/>
+            <StringItem index="2" value="Onivoro"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlimentacaoOpcaoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="NomeHabitatTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome do Habitat"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="NomeHabitatCampo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomeHabitatCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="TemperaturaTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Temperatura do Habitat"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="TemperaturaCampo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TemperaturaCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AreaTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Area em M&#xb2; do Habitat"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="AreaCampo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AreaCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="SoloTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Solo do Habitat"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="SoloCampo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SoloCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="NadadeirasTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Quantidade de Nadadeiras"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="NadadeirasCampo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NadadeirasCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ProfundidadeMaxTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Profundidade M&#xe1;xima de Nado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="ProfundidadeMaxCampo">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProfundidadeMaxCampoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="NadaTexto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Peixe nada?"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="NadaOpcao">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="N&#xe3;o"/>
+            <StringItem index="1" value="Sim"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NadaOpcaoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>
