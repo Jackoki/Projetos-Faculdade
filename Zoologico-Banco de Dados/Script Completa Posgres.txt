@@ -1,0 +1,581 @@
+CREATE TABLE Habitat (
+    HabitatId INTEGER PRIMARY KEY,
+    HabitatNome VARCHAR(50),
+    HabitatTemperatura INTEGER,
+    HabitatArea FLOAT,
+    HabitatSolo VARCHAR(50)
+);
+
+CREATE TABLE Animal (
+    AnimalId INTEGER,
+    AnimalNome VARCHAR(50),
+    AnimalIdade INTEGER,
+    AnimalPeso FLOAT,
+    AnimalAltura FLOAT,
+    AnimalEspecie VARCHAR(50),
+    AnimalSexo BOOLEAN,
+    AnimalCarnivoro BOOLEAN,
+    AnimalHerbivoro BOOLEAN,
+    HabitatId INTEGER,
+    PRIMARY KEY (AnimalId, HabitatId),
+    FOREIGN KEY (HabitatId) REFERENCES Habitat(HabitatId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Anfibio (
+    AnfibioPatas INTEGER,
+    AnfibioMetamorfose BOOLEAN,
+    AnimalId INTEGER,
+    HabitatId INTEGER,
+    PRIMARY KEY (AnimalId, HabitatId),
+    FOREIGN KEY (AnimalId, HabitatId) REFERENCES Animal(AnimalId, HabitatId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Ave (
+    AveAsas INTEGER,
+    AvePatas INTEGER,
+    AveVooMax INTEGER,
+    AveVoo BOOLEAN,
+    AnimalId INTEGER,
+    HabitatId INTEGER,
+    PRIMARY KEY (AnimalId, HabitatId),
+    FOREIGN KEY (AnimalId, HabitatId) REFERENCES Animal(AnimalId, HabitatId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Mamifero (
+    MamiferoPatas INTEGER,
+    MamiferoTempoGestacao INTEGER,
+    MamiferoCaminha BOOLEAN,
+    AnimalId INTEGER,
+    HabitatId INTEGER,
+    PRIMARY KEY (AnimalId, HabitatId),
+    FOREIGN KEY (AnimalId, HabitatId) REFERENCES Animal(AnimalId, HabitatId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Reptil (
+    ReptilPatas INTEGER,
+    ReptilVeneno BOOLEAN,
+    AnimalId INTEGER,
+    HabitatId INTEGER,
+    PRIMARY KEY (AnimalId, HabitatId),
+    FOREIGN KEY (AnimalId, HabitatId) REFERENCES Animal(AnimalId, HabitatId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Peixe (
+    PeixeNadadeiras INTEGER,
+    PeixeProfundidaMax INTEGER,
+    PeixeNada BOOLEAN,
+    AnimalId INTEGER,
+    HabitatId INTEGER,
+    PRIMARY KEY (AnimalId, HabitatId),
+    FOREIGN KEY (AnimalId, HabitatId) REFERENCES Animal(AnimalId, HabitatId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+--Habitat para Anfibios
+INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+VALUES (1, 'Ambiente Aquático', 15, 500, 'Lodoso');
+
+--Inserção de Axolote na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (1, 'Axolote', 2, 0.2, 23, 'A. Mexicanum', false, true, false, 1);
+INSERT INTO Anfibio (AnfibioPatas, AnfibioMetamorfose, AnimalId, HabitatId)
+VALUES (4, false, 1, 1);
+
+
+--Inserção de Sapo na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (2, 'Sapo Bufo', 1, 0.2, 15, 'Bufo Bufo', true, true, false, 1);
+INSERT INTO Anfibio (AnfibioPatas, AnfibioMetamorfose, AnimalId, HabitatId)
+VALUES (4, true, 2, 1);
+
+
+--Inserção de Salamandra na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (3, 'Salamandra', 4, 0.1, 30, 'Ambystoma Tigrinum', true, true, false, 1);
+INSERT INTO Anfibio (AnfibioPatas, AnfibioMetamorfose, AnimalId, HabitatId)
+VALUES (4, true, 3, 1);
+
+
+--Inserção de Tritão Ibérico na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (4, 'Tritão Ibérico', 1, 0.05, 7, 'Lissotriton Boscai', false, true, false, 1);
+INSERT INTO Anfibio (AnfibioPatas, AnfibioMetamorfose, AnimalId, HabitatId)
+VALUES (4, true, 4, 1);
+
+
+--Inserção de Salamandra Alpina na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (5, 'Salamandra Alpina', 2, 0.1, 12, 'Salamandra Atra', true, true, false, 1);
+INSERT INTO Anfibio (AnfibioPatas, AnfibioMetamorfose, AnimalId, HabitatId)
+VALUES (4, false, 5, 1);
+
+
+
+
+
+
+--Habitat para Bosques
+INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+VALUES (2, 'Bosque Aviário', 25, 500, 'Arborizado');
+
+--Habitat para Frio
+INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+VALUES (3, 'Pinguinário', -15, 300, 'Gelo');
+
+--Habitat de Savana
+INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+VALUES (4, 'Savana', 30, 600, 'Arenoso');
+
+--Habitat de Lagoa
+INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+VALUES (5, 'Lagoa', 25, 300, 'Gramíneo');
+
+
+--Inserção de Gavião na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (6, 'Gavião-Real', 5, 3.5, 70, 'Harpya harpyja', true, true, false, 2);
+INSERT INTO Ave (AveAsas, AvePatas, AveVooMax, AveVoo, AnimalId, HabitatId)
+VALUES (2, 2, 120, true, 6, 2);
+
+
+--Inserção de Pinguim na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (7, 'Pinguim', 3, 30, 120, 'Aptenodytes forsteri', true, true, false, 3);
+INSERT INTO Ave (AveAsas, AvePatas, AveVooMax, AveVoo, AnimalId, HabitatId)
+VALUES (2, 2, 0, false, 7, 3);
+
+
+--Inserção de Avestruz na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (8, 'Avestruz', 6, 100, 200, 'Struthio camelus', false, true, true, 4);
+INSERT INTO Ave (AveAsas, AvePatas, AveVooMax, AveVoo, AnimalId, HabitatId)
+VALUES (2, 2, 0, false, 8, 4);
+
+
+--Inserção de Papagaio na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (9, 'Papagaio', 12, 0.5, 30, 'Psittacidae', false, false, true, 2);
+INSERT INTO Ave (AveAsas, AvePatas, AveVooMax, AveVoo, AnimalId, HabitatId)
+VALUES (2, 2, 150, true, 9, 2);
+
+
+--Inserção de Flamingo na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (10, 'Flamingo', 5, 3, 100, 'Phoenicopteridae', false, true, false, 5);
+INSERT INTO Ave (AveAsas, AvePatas, AveVooMax, AveVoo, AnimalId, HabitatId)
+VALUES (2, 2, 0, false, 10, 5);
+
+
+
+
+
+--Habitat para Baleia
+INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+VALUES (6, 'Aquário Gigante', 30, 40000, 'Arenoso');
+
+--Inserção de Baleia na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (11, 'Baleia-Jubarte', 30, 27000, 1550, 'Megaptera novaeangliae', false, true, false, 6);
+INSERT INTO Mamifero (MamiferoPatas, MamiferoTempoGestacao, MamiferoCaminha, AnimalId, HabitatId)
+VALUES (0, 44, false, 11, 6);
+
+
+--Inserção de Leão na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (12, 'Leão', 8, 200, 250, 'Panthera leo', true, true, false, 4);
+INSERT INTO Mamifero (MamiferoPatas, MamiferoTempoGestacao, MamiferoCaminha, AnimalId, HabitatId)
+VALUES (4, 17, true, 12, 4);
+
+
+--Inserção de Elefante na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (13, 'Elefante', 30, 7000, 330, 'Loxodonta', false, false, true, 4);
+INSERT INTO Mamifero (MamiferoPatas, MamiferoTempoGestacao, MamiferoCaminha, AnimalId, HabitatId)
+VALUES (4, 96, true, 13, 4);
+
+
+--Inserção de Canguru na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (14, 'Canguru', 5, 56, 220, 'Marcopus rupus', true, false, true, 4);
+INSERT INTO Mamifero (MamiferoPatas, MamiferoTempoGestacao, MamiferoCaminha, AnimalId, HabitatId)
+VALUES (4, 0, true, 14, 4);
+
+
+--Inserção de Girafa na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (15, 'Girafa', 20, 1000, 500, 'G. camelopardalis', true, false, true, 4);
+INSERT INTO Mamifero (MamiferoPatas, MamiferoTempoGestacao, MamiferoCaminha, AnimalId, HabitatId)
+VALUES (4, 0, true, 15, 4);
+
+
+
+
+
+--Inserção de Jabuti na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (16, 'Jabuti', 40, 5, 25, 'C. carbonaria', false, false, true, 1);
+INSERT INTO Reptil (ReptilPatas, ReptilVeneno, AnimalId, HabitatId)
+VALUES (4, false, 16, 1);
+
+
+--Inserção de Jacaré na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (17, 'Jacaré', 25, 320, 220, 'Alligatoridae', false, true, false, 1);
+INSERT INTO Reptil (ReptilPatas, ReptilVeneno, AnimalId, HabitatId)
+VALUES (4, false, 17, 1);
+
+
+--Inserção de Iguana na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (18, 'Iguana', 12, 5, 110, 'A. cristatus', true, false, true, 1);
+INSERT INTO Reptil (ReptilPatas, ReptilVeneno, AnimalId, HabitatId)
+VALUES (4, false, 18, 1);
+
+
+--Inserção de Sucuri na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (19, 'Sucuri', 9, 52, 500, 'Eunectes', true, true, false, 1);
+INSERT INTO Reptil (ReptilPatas, ReptilVeneno, AnimalId, HabitatId)
+VALUES (0, false, 19, 1);
+
+--Inserção de Lagarto Monitor na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (20, 'Lagarto Monitor', 12, 10, 150, 'Varanus', true, true, false, 1);
+INSERT INTO Reptil (ReptilPatas, ReptilVeneno, AnimalId, HabitatId)
+VALUES (4, false, 20, 1);
+
+
+
+
+
+--Habitat para Peixes
+INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+VALUES (7, 'Aquário Normal', 25, 400, 'Arenoso');
+
+
+--Inserção de Peixe-Gota na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (21, 'Peixe-Gota', 3, 2, 25, 'Psychrolutes marcidus', false, false, true, 7);
+INSERT INTO Peixe (PeixeNadadeiras, PeixeProfundidaMax, PeixeNada, AnimalId, HabitatId)
+VALUES (2, 1200, false, 21, 7);
+
+
+--Inserção de Peixe-Boi na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (22, 'Peixe-Boi', 30, 500, 300, 'Trichechus', false, false, true, 7);
+INSERT INTO Peixe (PeixeNadadeiras, PeixeProfundidaMax, PeixeNada, AnimalId, HabitatId)
+VALUES (2, 15, true, 22, 7);
+
+
+--Inserção de Tubarão-Martelo  na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (23, 'Tubarão-Martelo', 10, 400, 300, 'Sphyrna', true, true, false, 7);
+INSERT INTO Peixe (PeixeNadadeiras, PeixeProfundidaMax, PeixeNada, AnimalId, HabitatId)
+VALUES (2, 300, true, 23, 7);
+
+
+--Inserção de Peixe-Lua na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (24, 'Peixe-Lua', 7, 2000, 300, 'Mola mola', false, true, true, 7);
+INSERT INTO Peixe (PeixeNadadeiras, PeixeProfundidaMax, PeixeNada, AnimalId, HabitatId)
+VALUES (4, 600, true, 24, 7);
+
+
+--Inserção de Peixe-Anjo na tabela
+INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+VALUES (25, 'Peixe-Anjo', 6, 0.8, 23, 'Pomacanthidae', false, true, true, 7);
+INSERT INTO Peixe (PeixeNadadeiras, PeixeProfundidaMax, PeixeNada, AnimalId, HabitatId)
+VALUES (3, 50, true, 25, 7);
+
+
+
+CREATE VIEW Info_Animal AS
+SELECT 
+    Animal.AnimalID AS ID_Animal,
+    Animal.AnimalNome AS Nome_Animal,
+    Animal.AnimalIdade AS Idade_Animal,
+    Animal.AnimalPeso AS Peso_Animal,
+    Animal.AnimalAltura AS Altura_Animal,
+    Animal.AnimalEspecie AS Especie_Animal,
+    Habitat.HabitatId AS ID_Habitat,
+    Habitat.HabitatNome AS Nome_Habitat
+FROM 
+    Animal, Anfibio, Habitat
+WHERE 
+    Animal.AnimalID = Anfibio.AnimalID AND Animal.HabitatID = Habitat.HabitatID
+	
+UNION 
+
+SELECT 
+    Animal.AnimalID AS ID_Animal,
+    Animal.AnimalNome AS Nome_Animal,
+    Animal.AnimalIdade AS Idade_Animal,
+    Animal.AnimalPeso AS Peso_Animal,
+    Animal.AnimalAltura AS Altura_Animal,
+    Animal.AnimalEspecie AS Especie_Animal,
+    Habitat.HabitatId AS ID_Habitat,
+    Habitat.HabitatNome AS Nome_Habitat
+FROM 
+    Animal, Ave, Habitat
+WHERE 
+    Animal.AnimalID = Ave.AnimalID AND Animal.HabitatID = Habitat.HabitatID
+
+UNION 
+
+SELECT 
+    Animal.AnimalID AS ID_Animal,
+    Animal.AnimalNome AS Nome_Animal,
+    Animal.AnimalIdade AS Idade_Animal,
+    Animal.AnimalPeso AS Peso_Animal,
+    Animal.AnimalAltura AS Altura_Animal,
+    Animal.AnimalEspecie AS Especie_Animal,
+    Habitat.HabitatId AS ID_Habitat,
+    Habitat.HabitatNome AS Nome_Habitat
+FROM 
+    Animal, Mamifero, Habitat
+WHERE 
+    Animal.AnimalID = Mamifero.AnimalID AND Animal.HabitatID = Habitat.HabitatID
+
+UNION 
+
+SELECT 
+    Animal.AnimalID AS ID_Animal,
+    Animal.AnimalNome AS Nome_Animal,
+    Animal.AnimalIdade AS Idade_Animal,
+    Animal.AnimalPeso AS Peso_Animal,
+    Animal.AnimalAltura AS Altura_Animal,
+    Animal.AnimalEspecie AS Especie_Animal,
+    Habitat.HabitatId AS ID_Habitat,
+    Habitat.HabitatNome AS Nome_Habitat
+FROM 
+    Animal, Peixe, Habitat
+WHERE 
+    Animal.AnimalID = Peixe.AnimalID AND Animal.HabitatID = Habitat.HabitatID
+
+UNION 
+
+SELECT 
+    Animal.AnimalID AS ID_Animal,
+    Animal.AnimalNome AS Nome_Animal,
+    Animal.AnimalIdade AS Idade_Animal,
+    Animal.AnimalPeso AS Peso_Animal,
+    Animal.AnimalAltura AS Altura_Animal,
+    Animal.AnimalEspecie AS Especie_Animal,
+    Habitat.HabitatId AS ID_Habitat,
+    Habitat.HabitatNome AS Nome_Habitat
+FROM 
+    Animal, Reptil, Habitat
+WHERE 
+    Animal.AnimalID = Reptil.AnimalID AND Animal.HabitatID = Habitat.HabitatID
+ORDER BY ID_Animal;
+
+
+CREATE OR REPLACE FUNCTION InsereInfoAnfibio() RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO Animal(AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+    VALUES (NEW.AnimalId, NEW.AnimalNome, NEW.AnimalIdade, NEW.AnimalPeso, NEW.AnimalAltura, NEW.AnimalEspecie, NEW.AnimalSexo, NEW.AnimalCarnivoro, NEW.AnimalHerbivoro, NEW.HabitatId);
+
+    INSERT INTO Anfibio(AnfibioPatas, AnfibioMetamorfose, AnimalId, HabitatId)
+    VALUES(NEW.AnfibioPatas, NEW.AnfibioMetamorfose, NEW.AnimalId, NEW.HabitatId);
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER InsereInfoAnfibio INSTEAD OF 
+INSERT ON Info_Animal FOR EACH ROW
+EXECUTE FUNCTION InsereInfoAnfibio();
+
+
+
+CREATE OR REPLACE FUNCTION InsereInfoAve() RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+    VALUES (NEW.AnimalId, NEW.AnimalNome, NEW.AnimalIdade, NEW.AnimalPeso, NEW.AnimalAltura, NEW.AnimalEspecie, NEW.AnimalSexo, NEW.AnimalCarnivoro, NEW.AnimalHerbivoro, NEW.HabitatId);
+
+    INSERT INTO Ave (AveAsas, AvePatas, AveVooMax, AveVoo, AnimalId, HabitatId)
+    VALUES (NEW.AveAsas, NEW.AvePatas, NEW.AveVooMax, NEW.AveVoo, NEW.AnimalId, NEW.HabitatId);
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER InsereInfoAve INSTEAD OF 
+INSERT ON Info_Animal FOR EACH ROW
+EXECUTE FUNCTION InsereInfoAve();
+
+
+
+
+CREATE OR REPLACE FUNCTION InsereInfoMamifero() RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+    VALUES (NEW.AnimalId, NEW.AnimalNome, NEW.AnimalIdade, NEW.AnimalPeso, NEW.AnimalAltura, NEW.AnimalEspecie, NEW.AnimalSexo, NEW.AnimalCarnivoro, NEW.AnimalHerbivoro, NEW.HabitatId);
+
+    INSERT INTO Mamifero (MamiferoPatas, MamiferoTempoGestacao, MamiferoCaminha, AnimalId, HabitatId)
+    VALUES (NEW.MamiferoPatas, NEW.MamiferoTempoGestacao, NEW.MamiferoCaminha, NEW.AnimalId, NEW.HabitatId);
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER InsereInfoMamifero INSTEAD OF 
+INSERT ON Info_Animal FOR EACH ROW
+EXECUTE FUNCTION InsereInfoMamifero();
+
+
+
+
+CREATE OR REPLACE FUNCTION InsereInfoPeixe() RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+    VALUES (NEW.AnimalId, NEW.AnimalNome, NEW.AnimalIdade, NEW.AnimalPeso, NEW.AnimalAltura, NEW.AnimalEspecie, NEW.AnimalSexo, NEW.AnimalCarnivoro, NEW.AnimalHerbivoro, NEW.HabitatId);
+
+    INSERT INTO Peixe (PeixeNadadeiras, PeixeProfundidaMax, PeixeNada, AnimalId, HabitatId)
+    VALUES (NEW.PeixeNadadeiras, NEW.PeixeProfundidaMax, NEW.PeixeNada, NEW.AnimalId, NEW.HabitatId);
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER InsereInfoPeixe INSTEAD OF 
+INSERT ON Info_Animal FOR EACH ROW
+EXECUTE FUNCTION InsereInfoPeixe();
+
+
+
+
+CREATE OR REPLACE FUNCTION InsereInfoReptil() RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO Animal (AnimalId, AnimalNome, AnimalIdade, AnimalPeso, AnimalAltura, AnimalEspecie, AnimalSexo, AnimalCarnivoro, AnimalHerbivoro, HabitatId)
+    VALUES (NEW.AnimalId, NEW.AnimalNome, NEW.AnimalIdade, NEW.AnimalPeso, NEW.AnimalAltura, NEW.AnimalEspecie, NEW.AnimalSexo, NEW.AnimalCarnivoro, NEW.AnimalHerbivoro, NEW.HabitatId);
+		
+    INSERT INTO Reptil (ReptilPatas, ReptilVeneno, AnimalId, HabitatId)
+    VALUES (NEW.ReptilPatas, NEW.ReptilVeneno, NEW.AnimalId, NEW.HabitatId);
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER InsereInfoReptil INSTEAD OF 
+INSERT ON Info_Animal FOR EACH ROW
+EXECUTE FUNCTION InsereInfoReptil();
+
+
+CREATE TABLE AnimalBackup(
+    Data_registro DATE,
+    Usuario VARCHAR(50),
+    AnimalId INTEGER,
+    AnimalNome VARCHAR(50),
+    AnimalIdade INTEGER,
+    AnimalPeso FLOAT,
+    AnimalAltura FLOAT,
+    AnimalEspecie VARCHAR(50),
+    AnimalSexo BOOLEAN,
+    AnimalCarnivoro BOOLEAN,
+    AnimalHerbivoro BOOLEAN,
+    HabitatId INTEGER
+);
+
+CREATE OR REPLACE FUNCTION Fazer_backup()
+RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO AnimalBackup(
+        Data_registro,
+        Usuario,
+        AnimalId,
+        AnimalNome,
+        AnimalIdade,
+        AnimalPeso,
+        AnimalAltura,
+        AnimalEspecie,
+        AnimalSexo,
+        AnimalCarnivoro,
+        AnimalHerbivoro,
+        HabitatId)
+		
+    VALUES (
+        current_timestamp,
+        current_user,
+        OLD.AnimalId,
+        OLD.AnimalNome,
+        OLD.AnimalIdade,
+        OLD.AnimalPeso,
+        OLD.AnimalAltura,
+        OLD.AnimalEspecie,
+        OLD.AnimalSexo,
+        OLD.AnimalCarnivoro,
+        OLD.AnimalHerbivoro,
+        OLD.HabitatId);
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_backup
+BEFORE DELETE ON Animal
+FOR EACH ROW
+EXECUTE FUNCTION Fazer_backup();
+
+
+CREATE OR REPLACE PROCEDURE habitatERRO (habitatidp NUMERIC(100,1), nome CHAR(50), temperatura NUMERIC(100,1), area NUMERIC(100,4), solo CHAR(50)) AS $$
+DECLARE
+    habitatmax NUMERIC(100,1);
+BEGIN
+	IF habitatidp > 1000 THEN
+		habitatmax := (SELECT MAX(habitatid) FROM habitat WHERE habitatid NOT IN (SELECT DISTINCT habitatid FROM animal));
+	
+        	IF habitatmax IS NOT NULL THEN
+            		DELETE FROM habitat WHERE habitatid = habitatmax;
+        	END IF;
+	END IF;		
+	INSERT INTO Habitat (HabitatId, HabitatNome, HabitatTemperatura, HabitatArea, HabitatSolo)
+	VALUES (habitatidp, nome, temperatura, area, solo);
+COMMIT;
+END; $$ language plpgsql;
+
+
+
+
+CREATE ROLE administrador with LOGIN SUPERUSER
+PASSWORD 'administrador';
+
+CREATE ROLE visitante with LOGIN
+PASSWORD 'visitante';
+
+GRANT SELECT ON Info_Animal to visitante;
+GRANT SELECT ON Animal to visitante;
+GRANT SELECT ON Habitat to visitante;
+GRANT SELECT ON Anfibio to visitante;
+GRANT SELECT ON Ave to visitante;
+GRANT SELECT ON Mamifero to visitante;
+GRANT SELECT ON Reptil to visitante;
+GRANT SELECT ON Peixe to visitante;
+
+CREATE ROLE funcionario with LOGIN 
+PASSWORD 'funcionario';
+
+GRANT SELECT,INSERT ON Animal to funcionario;
+GRANT SELECT,INSERT ON Habitat to funcionario;
+GRANT SELECT,INSERT ON Anfibio to funcionario;
+GRANT SELECT,INSERT ON Ave to funcionario;
+GRANT SELECT,INSERT ON Mamifero to funcionario;
+GRANT SELECT,INSERT ON Reptil to funcionario;
+GRANT SELECT,INSERT ON Peixe to funcionario;
+GRANT SELECT,INSERT ON Animal to funcionario;
+GRANT SELECT,INSERT ON Info_Animal to funcionario;
+
+
+CREATE INDEX anfibiopatas ON anfibio(AnfibioPatas);
+CREATE INDEX aveasas ON ave(AveAsas);
+CREATE INDEX mamiferopatas ON mamifero(MamiferoPatas);
+CREATE INDEX peixenadadeiras ON peixe(PeixeNadadeiras);
+CREATE INDEX reptilpatas ON reptil(ReptilPatas);
+
+
+
+
+
+
+
+

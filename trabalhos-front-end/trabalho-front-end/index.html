@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+
+<title>Página Inicial</title>
+<meta name="ods-13" content="Página Inicial">
+<meta name="autores" content="gabriel-crislean-daniel">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Calculadora de pegada de CO₂ emitido no ano</h1>
+        <h2>Todos juntos contra o aquecimento global!</h2>
+    </header>
+
+    <nav>
+        <ul>
+		    <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="html/content/ods.html">O que é ODS-13?</a></li>
+            <li><a href="html/content/informacao.html">Informação dos cálculos</a></li>
+			<li><a href="html/content/dicas.html">Dicas</a></li>
+			<li><a href="html/content/login.html">Logar</a></li>
+			<li><a href="html/content/admin.html">Admin</a></li>
+        </ul>
+    </nav>
+
+	
+	<img class="ods-13" src = "img/home/teste1.jpg" alt = "Imagem 1">
+
+    <div class="text1">
+        <p>Bem vindo ao nosso site! O nosso objetivo é te auxiliar para fornecer informações necessárias para a maior compreensão do impacto ambiental em suas escolhas diárias, 
+		incluindo desde o transporte que você utiliza até os alimentos e compras que contribuem para as emissões de gases de efeito estufa.</p>
+		<a href="https://brasil.un.org/pt-br/sdgs/13">Veja mais sobre aqui</a>
+    </div>
+	
+
+
+    <div class="text2">
+        <span>Para realizar o cálculo basta apenas inserir os dados nas caixas abaixo!</span>
+    </div>
+	
+	<img class="carbon-print" src = "img/home/carbon-print.png" alt = "Imagem 2">
+	
+	<br><br><br>
+	
+    <form>
+        <label for="kwh">Quantos kWh você gasta mensalmente?</label>
+        <br>
+        <input type="number" id="kwh" value="0" min="0" required>
+        <br><br>
+
+        <label for="gas">Quantos botijões de gás você utiliza por mês?</label>
+        <br>
+        <input type="number" id="gas" step="0.1" value="0" min="0" required>
+        <br><br>
+
+        <label for="combustivel">Quantos litros de combustível você gasta por mês?</label>
+        <br>
+        <input type="number" id="combustivel" value="0" min="0" required>
+        <br><br>
+
+        <label>Qual o tipo de combustível?</label>
+        <br>
+		<input type="radio" id="gasolina" name="combustivel" value="gasolina" checked>
+		<label for="gasolina">Gasolina</label>
+		<input type="radio" id="etanol" name="combustivel" value="etanol">
+		<label for="etanol">Etanol</label>
+		<input type="radio" id="diesel" name="combustivel" value="diesel">
+		<label for="diesel">Diesel</label>
+
+        <br><br>
+        <label for="aviao">Quantas horas de avião você viajou no último ano?</label>
+        <br>
+        <input type="number" id="aviao" step="0.5" value="0" min="0" required>
+        <br><br>
+
+        <label for="carne">Quantos quilos de carne bovina você come por mês?</label>
+        <br>
+        <input type="number" id="carne" step="0.1" value="0" min="0" required>
+        <br><br>
+
+        <label for="queijo">Quantas quilos de queijo você come por mês?</label>
+        <br>
+        <input type="number" id="queijo" step="0.1" value="0" min="0" required>
+        <br><br>
+
+        <label for="cafe">Quantas litros de café você bebe por mês?</label>
+        <br>
+        <input type="number" id="cafe" step="0.1" value="0" min="0" required>
+        <br><br>
+
+        <label for="roupa">Quantos quilos de roupa você comprou no último ano?</label>
+        <br>
+        <input type="number" id="roupa" step="0.1" value="0" min="0" required>
+        <br><br>
+
+        <label for="eletronicos">Quantas quilos de eletrônicos você comprou no último ano?</label>
+        <br>
+        <input type="number" id="eletronicos" step="0.1" value="0" min="0" required>
+        <br><br>
+
+        <input type="reset">
+        <input type="button" value="Calcular" onclick="calcularEmissao()">
+    </form>
+
+
+        <div class="text3">
+             <h1>O total de quilos de CO² que você emite mensalmente é:</h1>
+             <img class="co2" src="img/home/co2.png" alt="Imagem 3">
+             <h1 id="resultadoEmissao">XX KGs</h1>
+        </div>
+
+
+
+    <footer>
+        <div class="right-footer">
+            <a href="https://youtu.be/FtSZXQZ6baA">Vídeo sobre</a>
+            <a href="https://brasil.un.org/pt-br/sdgs/13">ODS-13</a>
+        </div>
+		
+        <ul class="right-links">
+            <li><a href="https://github.com/Jackoki">GitHub Gabriel</a></li>
+            <li><a href="https://github.com/CrisleanS">GitHub Crislean</a></li>
+	    <li><a href="https://github.com/DeAvreux">GitHub Daniel</a></li>
+        </ul>
+    </footer>
+	
+	<script src="javascript/calculos.js"></script>
+</body>
+
+</html>

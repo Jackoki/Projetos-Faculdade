@@ -1,0 +1,101 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+
+struct no {
+     int info;
+     struct no* prox;
+};
+typedef struct no No;
+
+struct fila {
+      No* ini;
+      No* fim;
+};
+typedef struct fila Fila;
+ 
+Fila* cria() {
+	Fila* novo = (Fila*)malloc(sizeof(Fila));
+    novo->ini = NULL;
+    novo->fim = NULL;
+	return novo;
+}
+
+void insere(Fila* f, int num){
+	No *novo;
+	novo = (No*)malloc(sizeof(No));
+	novo->info = num;
+	novo->prox = NULL;  
+
+    if(f->ini == NULL){
+    	f->ini = novo;
+        f->fim = novo;
+	}
+	
+     else {
+		f->fim->prox = novo;
+		f->fim = novo;
+	}
+
+}
+
+void imprimir(Fila *f){
+    if(f->ini == NULL){
+       printf("A fila esta vazia");
+    }
+               
+   else {
+       No *aux = f->ini;
+	   while(aux != NULL){
+       	   printf("%d ", aux->info);
+           aux = aux->prox;
+		}
+	}
+}
+
+Fila* intercala(Fila* f1, Fila* f2) { //A função cria uma fila e retorna a fila para o int main
+    Fila* f3 = cria();  //Usamos a função de criar para criar na função uma struct fila
+
+    No* aux1 = f1->ini; //Criamos um nó auxiliar para receber o inicio do f1
+    No* aux2 = f2->ini ;//Criamos um nó auxiliar para receber o inicio do f2
+
+    while (aux1 != NULL || aux2 != NULL) { //Usamos um while com OU para colocarmos todos os valores, isto é, a função só terminar quando ambos auxiliares chegarem no final de ambas as filas, que é o NULL
+        if (aux1 != NULL) {
+            insere(f3, aux1->info); //Inserimos no f3 o valor do auxiliar e depois mudamos o ponteiro do aux1
+            aux1 = aux1->prox;
+        }
+
+        if (aux2 != NULL) { //Usamos 2 if e não if else para realizar a condição caso os 2 ocorra
+            insere(f3, aux2->info); //Inserimos no f3 o valor do auxiliar e depois mudamos o ponteiro do aux2
+            aux2 = aux2->prox;
+        }
+    }
+
+    return f3; //Retornamos o f3 para o int main
+}
+
+int main(){
+    Fila *f1, *f2, *f3;
+    f1 = cria();
+    f2 = cria();
+    insere(f1, 1);
+    insere(f1, 2);
+    insere(f1, 3);
+    insere(f1, 4);     
+
+    insere(f2, 1);
+    insere(f2, 2);
+    insere(f2, 3);
+    insere(f2, 4);     
+
+	
+    imprimir(f1);
+    printf("\n");
+    imprimir(f2);
+	
+    f3 = intercala(f1, f2);
+    printf("\n");
+    imprimir(f3);
+	
+    return 0;
+}

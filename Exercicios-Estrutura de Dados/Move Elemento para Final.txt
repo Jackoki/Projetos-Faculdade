@@ -1,0 +1,40 @@
+Lista2* moveParaOFinal(Lista2* l, int valor) {
+    Lista2 *p = l;
+
+    // Buscar o nó com o valor informado
+    while (p != NULL && p->info != valor) {
+        p = p->prox;
+    }
+
+    if (p != NULL) {
+        // Remover o nó da posição atual
+        if (p == l) {
+            l = p->prox;
+            if (l != NULL) {
+                l->ant = NULL;
+            }
+        } else {
+            p->ant->prox = p->prox;
+            if (p->prox != NULL) {
+                p->prox->ant = p->ant;
+            }
+        }
+
+        // Colocar o nó no final da lista
+        p->ant = NULL;
+        p->prox = NULL;
+
+        Lista2 *temp = l;
+        while (temp->prox != NULL) {
+            temp = temp->prox;
+        }
+
+        temp->prox = p;
+        p->ant = temp;
+
+        return l;
+    } else {
+        printf("Valor nao encontrado!\n");
+        return l;
+    }
+}

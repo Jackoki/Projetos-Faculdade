@@ -1,0 +1,94 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define MAX 50
+
+struct pilha {
+	int n;
+	float vet[MAX];
+};
+typedef struct pilha Pilha;
+
+Pilha* cria(){
+	Pilha *novo;
+	novo = (Pilha*)malloc(sizeof(Pilha));
+	novo->n = 0;	
+	return novo;
+}
+
+void push(Pilha *p, float v){
+	if(p->n==MAX)
+		printf("Stack overflow!");
+	else{
+		p->vet[p->n] = v;
+		p->n++;
+	}
+}
+
+void imprimir(Pilha *p){
+	int i;
+	if(p->n==0)
+		printf("Pilha vazia!");
+	else{
+		for(i=0;i<p->n;i++)
+			printf("Vet[%d] = %f\n", i, p->vet[i]);
+	}
+}
+
+int vazia(Pilha *p){
+	return p->n==0;
+}
+
+float pop(Pilha *p){
+	float r=-1;
+	if(vazia(p)){	
+		printf("Pilha vazia!");
+		exit(0);
+	}
+	else{
+		r = p->vet[p->n-1];
+		p->n--;
+	}	
+	return r;	
+}
+
+Pilha* libera(Pilha *p){
+	free(p);
+	return NULL;
+}
+
+Pilha* retiraNum(Pilha *p, float num){
+	Pilha *p2 = cria();
+	int i;
+	
+    for(i = 0; i < p->n; i++){
+    	if(p->vet[i] != num){
+			push(p2, p->vet[i]);
+		}
+	}
+
+    return p2;
+}
+
+
+int main(){
+	Pilha *P1;
+	
+	P1 = cria();
+	
+	push(P1,4.2);
+	push(P1,1.1);
+	push(P1,0.2);
+	push(P1,7.2);
+	
+	imprimir(P1);
+	printf("\n");
+	
+	P1 = retiraNum(P1, 0.2);
+	
+	printf("\n");
+	imprimir(P1);
+
+				
+	return 0;
+}

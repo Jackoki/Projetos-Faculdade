@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct arvore {
+	int num;
+	struct arvore *esq;
+	struct arvore *dir;
+};
+typedef struct arvore Arvore;
+
+Arvore* inicializa(){
+	return NULL;
+}
+
+Arvore* cria(int num, Arvore *esq, Arvore *dir){
+	Arvore* novo;
+	novo = (Arvore*)malloc(sizeof(Arvore));
+	novo->num = num;
+	novo->esq = esq;
+	novo->dir = dir;
+	
+	return novo;
+}
+
+
+int naoFolhas(Arvore *a){
+	if(a == NULL){ //Se 'a' for NULL, isso significa que a árvore está vazia
+		return 0;
+	}
+
+    else{ //Se a árvore não é nula, logo precisamos analisar se é uma folha ou não
+   	 	if(a->esq != NULL || a->dir != NULL){ //Fazemos um if para verificar se a raiz contém alguma outra subraiz, podendo ser esquerda OU direita
+			return 1 + naoFolhas(a->esq) + naoFolhas(a->dir); //Como ela é uma não raiz, retornamos 1 mais a somatória das subraizes de sua esquerda e a somatória das subraizes de sua direita
+		}
+		else{
+			return 0; //Se ela não tem nem direita ou esquerda, é uma folha
+		}
+	}
+}
+
+int main(){
+	Arvore *a1;
+	a1 = inicializa();
+	a1 = cria(1, cria(2, cria(4, NULL, NULL), cria(5, NULL, NULL)), cria(3, cria(6, NULL, NULL), cria(7, NULL, NULL)));
+
+	int i = naoFolhas(a1);
+	printf("A arvore contem %d nao folhas", i);
+	
+	return 0;
+}

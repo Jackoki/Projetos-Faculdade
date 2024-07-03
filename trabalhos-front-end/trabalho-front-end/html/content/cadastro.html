@@ -1,0 +1,47 @@
+ <!DOCTYPE HTML>
+    <html lang="pt-br">
+    <head>
+    <meta charset="utf-8">
+
+    <title>Tela de Cadastro</title>
+    <meta name="ods-13" content="Tela de Cadastro">
+    <meta name="autores" content="gabriel-crislean-daniel">
+	<link rel="stylesheet" href="../../css/cadastro.css">
+	</head>
+	
+	<body>
+		<form action="index.html" method="post">
+			<label for="name">Nome:</label>
+			<input type="text" id="name" size="30" required>
+			
+			<br><br>
+			
+			<label for="dob">Data de Nascimento:</label>
+			<input type="date" id="dob" name="dob" required>
+			
+			<br><br>
+			
+			<label for="email">Email:</label>
+			<input type="email" id="email" pattern="@example.com" size="30" required>
+			
+			<br><br>
+			
+			<label for="phone">Número de Celular:</label>
+			<input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" size="18" required>
+			
+			<br><br>
+			
+			<label for="pwd">Senha:</label>
+			<input type="password" id="pwd" name="pwd" size="30" required>
+			
+			<br>
+
+			<p><a href="login.html">Voltar</a></p>
+			
+			<button onclick="window.location.href = '../../index.html';">Cadastrar
+			</button>
+			
+		</form>
+	</body>
+	
+ </html>
